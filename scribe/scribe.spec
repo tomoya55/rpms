@@ -9,7 +9,7 @@
 %global config_opts --disable-static --with-thriftpath=%{_prefix} --with-fb303path=%{_prefix} --with-boost-system=boost_system --with-boost-filesystem=boost_filesystem
 
 Name:             scribe
-Version:          2.1
+Version:          2.2
 Release:          1%{?dist}
 Summary:          A server for aggregating log data streamed in real time
 
@@ -74,6 +74,7 @@ Python bindings for %{name}.
 %{__install} -D -m 755 ./src/libscribe.so %{buildroot}%{_libdir}/libscribe.so
 %{__install} -D -m 644 ./examples/example1.conf %{buildroot}%{_sysconfdir}/scribed/default.conf
 %{__install} -D -m 755 %{SOURCE1} %{buildroot}%{_sysconfdir}/rc.d/init.d/scribed
+%{__install} -D -m 755 %{SOURCE1} %{buildroot}%{_sysconfdir}/init.d/scribed
 %{__install} -D -m 644 %{SOURCE2} %{buildroot}%{_sysconfdir}/sysconfig/scribed
 
 # Remove scripts
@@ -111,6 +112,9 @@ if [ $1 = 0 ]; then
 fi
 
 %changelog
+* Fri Apr 09 2010 Tomoya Hirano <hiranotomoya@gmail.com> - 2.2-0
+- Update to 2.2
+
 * Mon Dec 07 2009 Silas Sewell <silas@sewell.ch> - 2.1-1
 - Update to 2.1
 
