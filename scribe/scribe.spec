@@ -91,6 +91,7 @@ Python bindings for %{name}.
 %{_bindir}/scribed
 %{_libdir}/libscribe.so
 %{_sysconfdir}/rc.d/init.d/scribed
+%{_sysconfdir}/init.d/scribed
 %{_bindir}/scribe_ctrl
 
 %files python
